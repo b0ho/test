@@ -3,7 +3,7 @@ from pytube import Playlist
 import pytube
 
 pl = Playlist(
-    'https://www.youtube.com/playlist?list=PLO6aYJJHi7hBHtB6uqWPm22Oow8EhYIEC')
+    'https://www.youtube.com/playlist?list=PLxsZ9y2KtxHslc0-t8QTXu2GLSQkF0VIh')
 pl.download_all('C:\\Users\\ybg48\\Downloads')
 
 yt = YouTube(
@@ -11,10 +11,10 @@ yt = YouTube(
 
 dir = 'C:\\Users\\ybg48\\Downloads'
 
-video = yt.get('mp4', 480)
+#video = yt.get('mp4', 480)
 
 # video.download(dir)
-# YouTube('https://www.youtube.com/watch?v=7k4WRNbzGSM&index=30&list=PLO6aYJJHi7hBHtB6uqWPm22Oow8EhYIEC&t=0s').streams.first().download('./download')
+# YouTube('https://www.youtube.com/watch?v=j7ymH0v1bfI&index=78&list=PLldmudk5IZFWmXOxgukwwiSgb_TyB3rBY&t=0s').streams.first().download(dir)
 # YouTube('https://www.youtube.com/watch?v=Fbw3alUxhvk&index=31&list=PLO6aYJJHi7hBHtB6uqWPm22Oow8EhYIEC&t=0s').streams.first().download('./download')
 # YouTube('https://www.youtube.com/watch?v=XgjQjNKqY-w&index=32&list=PLO6aYJJHi7hBHtB6uqWPm22Oow8EhYIEC&t=0s').streams.first().download('./download')
 # YouTube('https://www.youtube.com/watch?v=xpDZXOCNKww&index=33&list=PLO6aYJJHi7hBHtB6uqWPm22Oow8EhYIEC&t=0s').streams.first().download('./download')
