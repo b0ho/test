@@ -3,7 +3,7 @@ from pytube import Playlist
 import pytube
 
 pl = Playlist(
-    'https://www.youtube.com/playlist?list=PLxsZ9y2KtxHslc0-t8QTXu2GLSQkF0VIh')
+    'https://www.youtube.com/playlist?list=PLokjDpRxx3_qLa-V8m19Vh3J4OVWWfNsl')
 pl.download_all('C:\\Users\\ybg48\\Downloads')
 
 yt = YouTube(
