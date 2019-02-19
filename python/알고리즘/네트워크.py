@@ -12,7 +12,7 @@ def solution(n, computers):
     recu(computers, 0)
     answer = (len(computers))
     print(answer)
-    return answer
+/    return answer
 
 
 def recu(computers, start):
