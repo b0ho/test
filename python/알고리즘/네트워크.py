@@ -12,7 +12,7 @@ def solution(n, computers):
     recu(computers, 0)
     answer = (len(computers))
     print(answer)
-/    return answer
+    return answer
 
 
 def recu(computers, start):
@@ -24,6 +24,7 @@ def recu(computers, start):
         print(computers)
         for j in range(len(computers[i])):
             print("원소 비교")
+            
 
             if i == start:
                 break
