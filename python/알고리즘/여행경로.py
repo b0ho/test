@@ -9,6 +9,7 @@ def solution(tickets):
     recu(tickets, [], True)
 
     print(answer)
+    print(a)
 
     return answer[0]
 
