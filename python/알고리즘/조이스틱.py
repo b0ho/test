@@ -13,13 +13,7 @@ def solution(name):
     lr = 1
 
     # 첫번째는 좌우이동없이 변환
-    tmp = UD(tmp, name, loc, lr)
-
-    # 왼쪽으로 이동할지 오른쪽으로 이동할지 결정
-    # 최초 결정 이후에는 한쪽 방향으로만 이동
-    if name.find("A") > len(name)/2-1:
-        lr *= - 1
-        loc = len(name)
+    tmp = UD(tmp, name, loc)
 
     # 입력 문자열과 같아질때까지 반복
     while 1:
@@ -30,17 +24,34 @@ def solution(name):
             return answer
 
         # 좌 or 우로 이동
-        loc += lr
-        answer += 1
+        right = LR(name, loc + 1, 1)
+        left = LR(name, loc - 1, -1)
+        if right > left:
+            answer += left
+            loc = left
+        else:
+            answer += right
+            loc = right
 
         # 이동값을 매번 추가
-        tmp = UD(tmp, name, loc, lr)
+        tmp = UD(tmp, name, loc)
 
     return answer
 
 
+# 좌우 이동을 결정
+def LR(name, loc, lr):
+    cnt = 0
+    while True:
+        if name[loc] == "A":
+            loc += lr
+            cnt += 1
+        else:
+            return cnt
+
+
 # 알파벳을 변환
-def UD(tmp, name, loc, lr):
+def UD(tmp, name, loc):
     global answer
     n = 0
 
