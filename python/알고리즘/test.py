@@ -1,9 +1,3 @@
-num = int(input())
+sum = {0: 0, 1: 0, 2: 4}
 
-num_arr = list(map(int, list(str(num))))
-
-sum = 0
-for i in num_arr:
-    sum += i
-
-print(sum)
+print(sum.get(2))
