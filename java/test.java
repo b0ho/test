@@ -14,13 +14,15 @@ public class test {
         int answer = 0;
         Arrays.sort(citations);
 
-        for (int h = citations.length - 1; h > -1; h--) {
-            System.out.println(h);
-            if (citations[h] <= h) {
-                answer = h;
-                break;
+        for (int h = 0; h < citations[citations.length - 1]; h++) {
+            for (int i = 0; i < citations.length; i++) {
+                if (citations[i] >= h && citations.length - i >= h) {
+                    answer = h;
+                    break;
+                }
             }
         }
+
         System.out.println(answer);
         return answer;
     }
