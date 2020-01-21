@@ -30,6 +30,8 @@ class Main {
         System.out.println();
         Arrays.fill(visit, false);
         bfs(v);
+
+        sc.close();
     }
 
     private static void dfs(int now) {

@@ -2,14 +2,14 @@ package test.java.solution;
 
 //모든 경우의 수식을 완성할 필요가 없음
 //수식 완성해보기
-class Solution {
+class 타겟넘버 {
     static int answer;
     static int[][] arr = new int[100][5];
     static int cnt = 0;
     static int f = 0;
 
     public static void main(String args[]) {
-        Solution s = new Solution();
+        타겟넘버 s = new 타겟넘버();
         int[] n = { 1, 1, 1, 1, 1 };
         int t = 3;
         s.solution(n, t);

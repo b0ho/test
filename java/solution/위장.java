@@ -4,14 +4,12 @@ package test.java.solution;
 //import java.util.ArrayList;
 import java.util.HashMap;
 
-class Solution {
+class 위장 {
     static int answer;
 
     public static void main(String args[]) {
-        Solution s = new Solution();
+        위장 s = new 위장();
         String[][] c = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" },
-                { "green_turban", "headgear" } };
-        String[][] c2 = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "headgear" },
                 { "green_turban", "headgear" } };
         s.solution(c);
         System.out.println(answer);

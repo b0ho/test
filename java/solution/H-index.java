@@ -1,10 +1,11 @@
-package test.java;
+package test.java.solution;
 
 import java.util.Arrays;
 
-public class test {
+//정렬한 뒤 중간부터 시작해서 좌 우로 차례 검사
+class H_index {
     public static void main(String args[]) {
-        test s = new test();
+        H_index s = new H_index();
         // int[] n = { 3, 0, 6, 1, 5 };
         int[] n = { 2, 7, 5 };
         s.solution(n);
