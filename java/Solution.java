@@ -21,7 +21,7 @@ public class Solution {
         for (int i = 0; i < 4; i++) {
             rec(turn(key, i), lock, lock.length, lock.length, lock.length, lock.length);
         }
-        System.out.println(answer);
+        // System.out.println(answer);
         return answer;
     }
 
@@ -42,12 +42,16 @@ public class Solution {
         int[][] tmp3 = new int[turn_key.length][turn_key.length];
         if (n == 0) {
             tmp1 = turn_key;
+            return tmp1;
         }
         if (n >= 1) {
             for (int i = 0; i < turn_key.length; i++) {
                 for (int j = 0; j < turn_key.length; j++) {
                     tmp1[i][j] = turn_key[turn_key.length - 1 - j][i];
                 }
+            }
+            if (n == 1) {
+                return tmp1;
             }
         }
         if (n >= 2) {
@@ -56,8 +60,9 @@ public class Solution {
                     tmp2[i][j] = tmp1[turn_key.length - 1 - j][i];
                 }
             }
-            System.out.println(Arrays.deepToString(turn_key) + "s");
-            return tmp2;
+            if (n == 2) {
+                return tmp2;
+            }
         }
         if (n >= 3) {
             for (int i = 0; i < turn_key.length; i++) {
@@ -65,11 +70,9 @@ public class Solution {
                     tmp3[i][j] = tmp2[turn_key.length - 1 - j][i];
                 }
             }
-            System.out.println(Arrays.deepToString(turn_key) + "s");
             return tmp3;
         }
 
-        System.out.println(Arrays.deepToString(turn_key) + "s");
         return tmp1;
     }
 
@@ -78,6 +81,7 @@ public class Solution {
             return;
         } else {
             int[][] tmp = new int[now_key.length][now_key.length];
+            int[][] toto = new int[now_key.length][now_key.length];
             for (int i = 0; i < now_key.length - 1; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     tmp[i][j] = now_key[i + 1][j];
@@ -86,15 +90,15 @@ public class Solution {
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     if (i == lock.length) {
-                        now_key[i][j] = 0;
+                        toto[i][j] = 0;
                     } else {
-                        now_key[i][j] = tmp[i][j];
+                        toto[i][j] = tmp[i][j];
                     }
                 }
             }
 
-            if (comf(now_key, lock) == false) {
-                rec(now_key, lock, u - 1, d + 1, l, r);
+            if (comf(toto, lock) == false) {
+                rec(toto, lock, u - 1, d + 1, l, r);
             } else {
                 answer = true;
                 return;
@@ -107,6 +111,7 @@ public class Solution {
             return;
         } else {
             int[][] tmp = new int[now_key.length][now_key.length];
+            int[][] toto = new int[now_key.length][now_key.length];
             for (int i = 1; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     tmp[i][j] = now_key[i - 1][j];
@@ -115,15 +120,15 @@ public class Solution {
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     if (i == 0) {
-                        now_key[i][j] = 0;
+                        toto[i][j] = 0;
                     } else {
-                        now_key[i][j] = tmp[i][j];
+                        toto[i][j] = tmp[i][j];
                     }
                 }
             }
 
-            if (comf(now_key, lock) == false) {
-                rec(now_key, lock, u + 1, d - 1, l, r);
+            if (comf(toto, lock) == false) {
+                rec(toto, lock, u + 1, d - 1, l, r);
             } else {
                 answer = true;
                 return;
@@ -136,6 +141,7 @@ public class Solution {
             return;
         } else {
             int[][] tmp = new int[now_key.length][now_key.length];
+            int[][] toto = new int[now_key.length][now_key.length];
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length - 1; j++) {
                     tmp[i][j] = now_key[i][j + 1];
@@ -144,15 +150,15 @@ public class Solution {
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     if (j == lock.length) {
-                        now_key[i][j] = 0;
+                        toto[i][j] = 0;
                     } else {
-                        now_key[i][j] = tmp[i][j];
+                        toto[i][j] = tmp[i][j];
                     }
                 }
             }
 
-            if (comf(now_key, lock) == false) {
-                rec(now_key, lock, u, d, l - 1, r + 1);
+            if (comf(toto, lock) == false) {
+                rec(toto, lock, u, d, l - 1, r + 1);
             } else {
                 answer = true;
                 return;
@@ -165,6 +171,7 @@ public class Solution {
             return;
         } else {
             int[][] tmp = new int[now_key.length][now_key.length];
+            int[][] toto = new int[now_key.length][now_key.length];
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 1; j < now_key.length; j++) {
                     tmp[i][j] = now_key[i][j - 1];
@@ -173,15 +180,15 @@ public class Solution {
             for (int i = 0; i < now_key.length; i++) {
                 for (int j = 0; j < now_key.length; j++) {
                     if (j == 0) {
-                        now_key[i][j] = 0;
+                        toto[i][j] = 0;
                     } else {
-                        now_key[i][j] = tmp[i][j];
+                        toto[i][j] = tmp[i][j];
                     }
                 }
             }
 
-            if (comf(now_key, lock) == false) {
-                rec(now_key, lock, u, d, l + 1, r - 1);
+            if (comf(toto, lock) == false) {
+                rec(toto, lock, u, d, l + 1, r - 1);
             } else {
                 answer = true;
                 return;
