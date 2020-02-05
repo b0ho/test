@@ -1,11 +1,11 @@
-package test.java;
+package test.java.solution;
 
 import java.util.Collections;
 import java.util.Vector;
 
-class Solution {
+class 셔틀버스 {
     public static void main(String args[]) {
-        Solution s = new Solution();
+        셔틀버스 s = new 셔틀버스();
         int n = 1;
         int t = 1;
         int m = 5;
