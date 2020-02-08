@@ -1,88 +1,53 @@
 package test.java;
 
-import java.util.Collections;
-import java.util.Vector;
+import java.util.*;
 
 class Solution {
     public static void main(String args[]) {
         Solution s = new Solution();
-        int n = 1;
-        int t = 1;
-        int m = 5;
-        String[] timetable = { "08:00", "08:01", "08:02", "08:03" };
-        s.solution(n, t, m, timetable);
+        int[] scoville = { 1, 2, 3, 9, 10, 12 };
+        int K = 7;
+        System.out.println(s.solution(scoville, K));
     }
 
-    public String solution(int n, int t, int m, String[] timetable) {
-        String answer = "";
-        // 벡터를 쓰면 크기가 가변하여 용이함
-        Vector<Integer> waitTable = new Vector<Integer>();
-        Vector<Integer> busTable = new Vector<Integer>();
-        int conTime = 0;
+    // 오름차순 정렬 한다.
+    // 지수 공식에 대입한다.
+    // 위를 반복하다 k이상이 되면 종료하고 cnt 리턴
+    public int solution(int[] scoville, int K) {
+        int answer = 0;
 
-        // 스트링 시간을 분단위로 변환
-        for (int i = 0; i < timetable.length; i++) {
-            String tmp = timetable[i];
-            waitTable.add(Integer.parseInt(tmp.substring(0, 2)) * 60 + Integer.parseInt(tmp.substring(3, 5)));
-            // System.out.println(waitTable);
-        }
-        Collections.sort(waitTable);
-
-        // 버스 출발 시간표
-        for (int i = 0; i < n; i++) {
-            busTable.add(540 + t * i);
+        List<Integer> scoville_arr = new ArrayList<Integer>(scoville.length);
+        for (int i : scoville) {
+            scoville_arr.add(i);
         }
 
-        // 가능한 경우 대기자 제거
-        if (n > 1) {
-            for (int i = 0; i < busTable.size() - 1; i++) {
-                for (int j = 0; j < m; j++) {
-                    if (waitTable.size() != 0 && busTable.get(i) >= waitTable.get(0)) {
-                        waitTable.remove(0);
-                        // System.out.println(waitTable.toString());
-                    }
-                }
+        while (true) {
+            // 섞을수가 없으면 (사이즈 = 1) 종료 : -1
+            if (scoville_arr.size() < 2) {
+                answer = -1;
+                return answer;
             }
-        }
 
-        // 탑승가능인원수보다 남은 대기자가 더 많으면 막차 못탐
-        if (m <= waitTable.size()) {
-            for (int i = 0; i < m; i++) {
-                // 대기자가 얼마나 일찍 와있나,,
-                if (busTable.get(busTable.size() - 1) >= waitTable.get(0)) {
-                    // 먼저 태울수 있으면, 다시 대기자를 제거
-                    if (i < m - 1) {
-                        waitTable.remove(0);
-                    } else {
-                        // 다 지웠으면 마지막 대기자보다는 1분빨리 나감
-                        conTime = waitTable.get(0) - 1;
-                        break;
-                    }
+            answer = answer + 1;
 
-                    // 막차보다 늦게오면 막차 탈수있음
-                } else {
-                    conTime = busTable.get(busTable.size() - 1);
-                    break;
-                }
+            // 매번 정렬
+            Collections.sort(scoville_arr);
+
+            // 지수 공식
+            int tmp = scoville_arr.get(0) + scoville_arr.get(1) * 2;
+
+            // K보다 크거나 같으면 종료 : cnt
+            if (tmp >= K) {
+                return answer;
             }
-        } else {
-            // 막차 탈 수 있으면 막차탐
-            conTime = busTable.get(busTable.size() - 1);
+
+            // 1번과 2번 제거, 새 지수 추가
+            scoville_arr.remove(0);
+            scoville_arr.remove(1);
+            scoville_arr.add(tmp);
+
         }
 
-        // 다시 스트링으로 변환
-        if (conTime / 60 < 10) {
-            answer += "0" + conTime / 60 + ":";
-        } else {
-            answer += conTime / 60 + ":";
-        }
-        if (conTime % 60 < 10) {
-            answer += "0" + conTime % 60;
-        } else {
-            answer += conTime % 60;
-        }
-
-        // System.out.println(answer);
-        return answer;
     }
+
 }

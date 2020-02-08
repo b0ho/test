@@ -26,7 +26,7 @@ class Solution {
                 rec(i);
             }
         }
-        // System.out.println(answer);
+        System.out.println(answer);
         return answer;
     }
 
