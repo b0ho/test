@@ -1,53 +1,110 @@
-package test.java;
-
 import java.util.*;
 
 class Solution {
     public static void main(String args[]) {
         Solution s = new Solution();
-        int[] scoville = { 1, 2, 3, 9, 10, 12 };
-        int K = 7;
-        System.out.println(s.solution(scoville, K));
+        int[][] num = { { 5, 3 }, { 11, 5 }, { 13, 3 }, { 3, 5 }, { 6, 1 }, { 1, 3 }, { 8, 6 }, { 7, 2 }, { 2, 2 } };
+        s.solution(num);
     }
 
-    // 오름차순 정렬 한다.
-    // 지수 공식에 대입한다.
-    // 위를 반복하다 k이상이 되면 종료하고 cnt 리턴
-    public int solution(int[] scoville, int K) {
-        int answer = 0;
+    int id;
 
-        List<Integer> scoville_arr = new ArrayList<Integer>(scoville.length);
-        for (int i : scoville) {
-            scoville_arr.add(i);
+    // 노드 객체 생성
+    // 노드를 통해 이진트리 생성
+    // 생성된 이진트리 전위, 후위 탐색
+    public int[][] solution(int[][] nodeinfo) {
+        int[][] answer = new int[2][];
+
+        // 노드들은 y가 큰게 먼저 같으면 x가 작은게 먼저 순서
+        PriorityQueue<Node> Pqueue = new PriorityQueue<>((q1, q2) -> {
+            if (q1.y == q2.y) {
+                return q1.x - q2.x;
+            }
+            return q2.y - q1.y;
+        });
+
+        // x, y좌표를 노드로 변환
+        for (int i = 0; i < nodeinfo.length; i++) {
+            Pqueue.offer(new Node(i + 1, nodeinfo[i][0], nodeinfo[i][1]));
         }
 
-        while (true) {
-            // 섞을수가 없으면 (사이즈 = 1) 종료 : -1
-            if (scoville_arr.size() < 2) {
-                answer = -1;
-                return answer;
+        // 정렬하여 이진트리 완성
+        Node root = Pqueue.poll();
+        while (!Pqueue.isEmpty()) {
+            Node parentNode = null;
+            Node node = root;
+            Node childNode = Pqueue.poll();
+            while (node != null) {
+                if (childNode.x < node.x) {
+                    parentNode = node;
+                    node = node.left;
+                } else {
+                    parentNode = node;
+                    node = node.right;
+                }
             }
-
-            answer = answer + 1;
-
-            // 매번 정렬
-            Collections.sort(scoville_arr);
-
-            // 지수 공식
-            int tmp = scoville_arr.get(0) + scoville_arr.get(1) * 2;
-
-            // K보다 크거나 같으면 종료 : cnt
-            if (tmp >= K) {
-                return answer;
+            if (parentNode.x > childNode.x) {
+                if (parentNode != null) {
+                    parentNode.left = childNode;
+                }
+            } else {
+                if (parentNode != null) {
+                    parentNode.right = childNode;
+                }
             }
-
-            // 1번과 2번 제거, 새 지수 추가
-            scoville_arr.remove(0);
-            scoville_arr.remove(1);
-            scoville_arr.add(tmp);
-
         }
 
+        // 전위순회
+        id = 0;
+        int[] preArray = new int[nodeinfo.length];
+        preOrder(root, preArray);
+        answer[0] = preArray;
+
+        // 후위순회
+        id = 0;
+        int[] postArray = new int[nodeinfo.length];
+        postOrder(root, postArray);
+        answer[1] = postArray;
+
+        return answer;
     }
 
+    // Node 객체
+    public class Node {
+        int id;
+        int x;
+        int y;
+        Node left;
+        Node right;
+
+        // 노드 생성시 아이디와 x, y 값 필요
+        // left, right 노드와 비교하여 삽입 위치를 찾아줘야함,
+        public Node(int id, int x, int y) {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            left = null;
+            right = null;
+        }
+    }
+
+    // 전위 탐색 : 노드, 왼쪽, 오른쪽
+    public void preOrder(Node node, int[] preArray) {
+        if (node == null) {
+            return;
+        }
+        preArray[id++] = node.id;
+        preOrder(node.left, preArray);
+        preOrder(node.right, preArray);
+    }
+
+    // 후위탐색 : 왼쪽, 오른쪽, 노드
+    public void postOrder(Node node, int[] postArray) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left, postArray);
+        postOrder(node.right, postArray);
+        postArray[id++] = node.id;
+    }
 }
