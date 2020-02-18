@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 //모든 경우의 수식을 완성할 필요가 없음
 //수식 완성해보기

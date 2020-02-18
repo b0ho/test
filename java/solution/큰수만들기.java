@@ -1,6 +1,4 @@
-package test.java.solution;
-
-import java.util.*;
+package solution;
 
 class Solution {
     public static void main(String args[]) {

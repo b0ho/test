@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 //정렬한 뒤 중간부터 시작해서 좌 우로 차례 검사
 class Solution {

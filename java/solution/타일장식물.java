@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 class 타일장식물 {
 

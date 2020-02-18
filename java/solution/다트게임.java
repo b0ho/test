@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 import java.util.Stack;
 import javax.script.ScriptEngine;

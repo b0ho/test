@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 import java.util.PriorityQueue;
 
@@ -16,7 +16,7 @@ class Solution {
     public int solution(int[] scoville, int K) {
         int answer = 0;
 
-        PriorityQueue<Integer> scovilles = new PriorityQueue(scoville.length);
+        PriorityQueue<Integer> scovilles = new PriorityQueue<>(scoville.length);
         for (int i : scoville) {
             scovilles.offer(i);
         }

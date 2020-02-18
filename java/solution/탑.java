@@ -1,4 +1,4 @@
-package test.java.solution;
+package solution;
 
 public class 탑 {
     public static void main(String args[]) {
