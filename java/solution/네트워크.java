@@ -1,13 +1,13 @@
 package solution;
 
 //정렬한 뒤 중간부터 시작해서 좌 우로 차례 검사
-class Solution {
+class 네트워크 {
     static int[] visited;
     static int[][] computers;
     static int n;
 
     public static void main(String args[]) {
-        Solution s = new Solution();
+        네트워크 s = new 네트워크();
         n = 3;
         int[][] computers = { { 1, 1, 0 }, { 1, 1, 0 }, { 0, 0, 1 } };
         s.solution(n, computers);
@@ -16,8 +16,8 @@ class Solution {
     public int solution(int n, int[][] computers) {
         int answer = 0;
         visited = new int[n];
-        Solution.computers = computers;
-        Solution.n = n;
+        네트워크.computers = computers;
+        네트워크.n = n;
 
         for (int i = 0; i < n; i++) {
             // System.out.println("대순환");

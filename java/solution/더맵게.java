@@ -2,9 +2,9 @@ package solution;
 
 import java.util.PriorityQueue;
 
-class Solution {
+class 더맵게 {
     public static void main(String args[]) {
-        Solution s = new Solution();
+        더맵게 s = new 더맵게();
         int[] scoville = { 1, 2, 3, 9, 10, 12 };
         int K = 7;
         System.out.println(s.solution(scoville, K));

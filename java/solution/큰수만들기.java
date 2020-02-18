@@ -1,8 +1,8 @@
 package solution;
 
-class Solution {
+class 큰수만들기 {
     public static void main(String args[]) {
-        Solution s = new Solution();
+        큰수만들기 s = new 큰수만들기();
         String number = "1231234";
         int k = 3;
         System.out.println(s.solution(number, k));
