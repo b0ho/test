@@ -1,4 +1,3 @@
-package solution;
 
 // 새로운 객체로 만들어 사용하면 편함!
 class Trie {

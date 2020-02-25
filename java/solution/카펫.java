@@ -1,4 +1,3 @@
-package solution;
 
 class 카펫 {
     public static void main(String args[]) {

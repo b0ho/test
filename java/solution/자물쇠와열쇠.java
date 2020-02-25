@@ -1,4 +1,3 @@
-package solution;
 
 public class 자물쇠와열쇠 {
     public static void main(String args[]) {

@@ -1,4 +1,3 @@
-package solution;
 
 class 큰수만들기 {
     public static void main(String args[]) {

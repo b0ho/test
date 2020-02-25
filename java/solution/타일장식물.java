@@ -1,4 +1,3 @@
-package solution;
 
 class 타일장식물 {
 

@@ -1,4 +1,3 @@
-package solution;
 
 //재귀로하면 오래걸림,,
 //import java.util.ArrayList;

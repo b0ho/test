@@ -1,0 +1,126 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-가사검색<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "가사검색",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-가장먼노드<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "가장먼노드",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-길찾기<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "길찾기",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-네트워크<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "네트워크",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-다트게임<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "다트게임",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-더맵게<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "더맵게",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-비밀지도<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "비밀지도",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-셔틀버스<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "셔틀버스",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-위장<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "위장",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-자물쇠와열쇠<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "자물쇠와열쇠",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-카펫<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "카펫",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-큰수만들기<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "큰수만들기",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-타겟넘버<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "타겟넘버",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-타일장식물<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "타일장식물",
+            "projectName": "solution_af6f9f88"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-탑<solution_af6f9f88>",
+            "request": "launch",
+            "mainClass": "탑",
+            "projectName": "solution_af6f9f88"
+        }
+    ]
+}
