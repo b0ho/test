@@ -6,4 +6,10 @@ public class 사이클제거 {
 
 	}
 
+	class Solution {
+	    public int solution(int n, int[][] edges) {
+	        int answer = 0;
+	        return answer;
+	    }
+	}
 }
