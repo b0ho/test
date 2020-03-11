@@ -1,6 +1,6 @@
-import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.ArrayList;
-import java.util.Deque;
+import java.util.LinkedList;
 
 public class 블록이동하기 {
 	public static void main(String[] args) {
@@ -44,7 +44,7 @@ public class 블록이동하기 {
 		int size = board.length;
 		ArrayList<ArrayList<Integer>> new_board = new ArrayList<>();
 		ArrayList<Node> visited = new ArrayList<>();
-		Deque<Node> deque = new ArrayDeque<Node>();
+		Queue<Node> queue = new LinkedList<Node>();
 
 		for (int i = 0, a = 0; i < size + 2; i++) {
 			ArrayList<Integer> tmp = new ArrayList<>();
@@ -55,21 +55,21 @@ public class 블록이동하기 {
 					tmp.add(board[a][b]);
 					b++;
 				}
-				System.out.print(tmp.get(j) + " ");
+				//System.out.print(tmp.get(j) + " ");
 			}
 			if (i != 0) {
 				a++;
 			}
-			System.out.println();
+			//System.out.println();
 			new_board.add(tmp);
 		}
 
 		visited.add(new Node(1, 1, 1, 2));
-		deque.push(new Node(1, 1, 1, 2, 0));
+		queue.offer(new Node(1, 1, 1, 2, 0));
 
-		while (deque.size() != 0) {
+		while (queue.size() != 0) {
 
-			Node Tnode = deque.poll();
+			Node Tnode = queue.poll();
 			answer = Tnode.dist + 1;
 
 			
@@ -80,7 +80,7 @@ public class 블록이동하기 {
 
 				if (!visited.contains(n)) {
 					visited.add(n);
-					deque.push(new Node(n.a_x, n.a_y, n.b_x, n.b_y, answer));
+					queue.offer(new Node(n.a_x, n.a_y, n.b_x, n.b_y, answer));
 				}
 			}
 		}
