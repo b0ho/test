@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 프렌즈4블록",
+            "request": "launch",
+            "mainClass": "프렌즈4블록",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - 프렌즈4블록",
+            "request": "launch",
+            "mainClass": "프렌즈4블록",
+            "projectName": "st"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - 입국심사",
+            "request": "launch",
+            "mainClass": "입국심사",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
