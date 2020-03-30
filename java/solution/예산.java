@@ -23,13 +23,13 @@ public class 예산 {
         if (sum < M) {
             return answer;
         } else {
-            int max = answer;
-            int min = 0;
-            int mid = 0;
+            long max = answer;
+            long min = 0;
+            long mid = 0;
 
             while (min <= max) {
-                int tmp = 0;
-                mid = (max + min) / 2;
+                long tmp = 0;
+                mid = (long) (max + min) / 2;
 
                 for (int i : budgets) {
                     if (i >= mid) {
@@ -42,13 +42,13 @@ public class 예산 {
                 if (tmp > M) {
                     max = mid - 1;
                 } else {
-                    answer = mid;
                     min = mid + 1;
                 }
+                answer = (int) max;
             }
 
         }
-        return answer;
 
+        return answer;
     }
 }
