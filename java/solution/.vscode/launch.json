@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 여행경로",
+            "request": "launch",
+            "mainClass": "여행경로",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - 정수삼각형",
+            "request": "launch",
+            "mainClass": "정수삼각형",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - 프렌즈4블록",
             "request": "launch",
             "mainClass": "프렌즈4블록",
