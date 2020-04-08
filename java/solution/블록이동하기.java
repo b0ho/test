@@ -18,7 +18,7 @@ public class 블록이동하기 {
 		int b_x = 0;
 		int b_y = 0;
 		int dist = 0;
-
+		
 		Node(int a_x, int a_y, int b_x, int b_y, int dist) {
 			this.a_x = a_x;
 			this.a_y = a_y;
