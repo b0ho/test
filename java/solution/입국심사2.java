@@ -4,7 +4,7 @@ public class 입국심사2 {
     public static void main(String[] args) {
         입국심사2 s = new 입국심사2();
         int num = 6;
-        int[] arr = { 7, 10 };
+        int[] arr = { 1, 2, 3 };
         System.out.println("start");
         s.t(num, arr);
         System.out.println("end");
@@ -22,14 +22,12 @@ public class 입국심사2 {
             for (int i = 0; i < times.length; i++) {
                 sum += mid / (long) times[i];
             }
-            if (sum < n) {
-                min = mid + 1;
-            } else {
-                if (mid <= answer) {
-                    answer = mid;
-                }
-                max = mid - 1;
-            }
+            if (sum == n) {
+                answer = mid;
+            } else if (sum > n) {
+                max = mid;
+            } else
+                min = mid;
         }
         System.out.println(answer);
         return answer;

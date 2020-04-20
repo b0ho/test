@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 종이접기",
+            "request": "launch",
+            "mainClass": "종이접기",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Solution",
             "request": "launch",
             "mainClass": "test.java.solution.Solution"

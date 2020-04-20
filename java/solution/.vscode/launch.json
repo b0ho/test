@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 입국심사2",
+            "request": "launch",
+            "mainClass": "입국심사2",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - 여행경로",
             "request": "launch",
             "mainClass": "여행경로",
