@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 무지의먹방라이브",
+            "request": "launch",
+            "mainClass": "무지의먹방라이브",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - 종이접기",
             "request": "launch",
             "mainClass": "종이접기",
