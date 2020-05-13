@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - 가장긴팰린드롬",
+            "request": "launch",
+            "mainClass": "가장긴팰린드롬",
+            "projectName": "solution"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - 무지의먹방라이브",
             "request": "launch",
             "mainClass": "무지의먹방라이브",
