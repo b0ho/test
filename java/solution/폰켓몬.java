@@ -3,7 +3,9 @@ import java.util.ArrayList;
 
 public class 폰켓몬 {
 	public static void main(String[] args) {
-
+        폰켓몬 s = new 폰켓몬();
+        int[] n = { 6, 9, 5, 7, 4 };
+        s.solution(n);
 	}
 
 	public int solution(int[] nums) {
