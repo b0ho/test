@@ -16,7 +16,7 @@ public class Solution {
 				{ "600", "apeach", "music", "2" } };
 		System.out.println("start");
 		김서방 김서방 = new 김서방();
-		김서방.solution(strs);
+		System.out.println(김서방.solution(strs));
 		System.out.println("end");
 	}
 }
