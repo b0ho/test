@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package solutions;
 
 import java.util.*;
@@ -157,3 +158,14 @@ public class 수식최대화 {
 		return num;
 	}
 }
+=======
+package solutions;
+
+public class 수식최대화 {
+	public long solution(String expression) {
+		long answer = 0;
+
+		return answer;
+	}
+}
+>>>>>>> branch 'master' of https://github.com/b0ho/test
