@@ -1,41 +1,34 @@
 package solutions;
+
 class 땅따먹기 {
-	public static void main(String[] args) {
-		땅따먹기 s = new 땅따먹기();
-		int[][] land = { { 1, 2, 3, 5 }, { 5, 6, 7, 8 }, { 4, 3, 2, 1 } };
-		System.out.println("start");
-		s.solution(land);
-		System.out.println("end");
-	}
-
-	int[][] Areas;
-	int max;
-
-	public int solution(int[][] land) {
+	int solution(int[][] land) {
 		int answer = 0;
-		Areas = land;
-		max = 0;
 
-		for (int i = 0; i < land[i].length - 1; i++) {
-				int tmp = rec(0, i, 0);
-				if (tmp > max) {
-					max = tmp;
+		// System.out.println(land.length);
+		// System.out.println(land[0].length);
+
+		for (int i = 1; i < land.length; i++) {
+			for (int j = 0; j < land[0].length; j++) {
+				int max = 0;
+				for (int k = 0; k < land[0].length; k++) {
+					if (j != k) {
+						if (max < land[i - 1][k]) {
+							max = land[i - 1][k];
+						}
+					} else {
+						continue;
+					}
 				}
-		}
-
-		answer = max;
-		return answer;
-	}
-
-	public int rec(int x, int y, int sum) {
-		if (x == 0 || x != y) {
-			System.out.println(Areas[x][y]);
-			sum += Areas[x][y];
-			if (x + 1 < Areas.length) {
-				rec(x + 1, y, sum);
+				land[i][j] += max;
 			}
 		}
 
-		return sum;
+		for (int i = 0; i < land[0].length; i++) {
+			if (answer < land[land.length - 1][i]) {
+				answer = land[land.length - 1][i];
+			}
+		}
+
+		return answer;
 	}
 }
